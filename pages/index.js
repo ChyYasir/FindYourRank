@@ -11,6 +11,7 @@ export default function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitClicked(true);
+    setRank(null);
     let fileName = "";
 
     switch (selectedGroup) {
@@ -39,7 +40,7 @@ export default function Home() {
     if (rollData) {
       setRank(rollData.Rank);
     } else {
-      setRank(null);
+      setRank("invalid");
     }
   };
 
@@ -128,19 +129,18 @@ export default function Home() {
             Submit
           </button>
         </form>
-        {submitClicked && (
-          <>
-            {rank !== null && (
-              <p className="text-green-600 text-center font-bold text-lg">
-                Rank of Roll Number {inputRoll} is {rank}
-              </p>
-            )}
-            {!rank && inputRoll && (
-              <p className="text-red-600 text-center font-bold text-lg">
-                Roll Number not found
-              </p>
-            )}
-          </>
+        {submitClicked && rank === null && (
+          <p className="text-center font-bold text-lg">Loading...</p>
+        )}
+        {submitClicked && rank !== null && rank !== "invalid" && (
+          <p className="text-green-600 text-center font-bold text-lg">
+            Rank of Roll Number {inputRoll} is {rank}
+          </p>
+        )}
+        {submitClicked && rank === "invalid" && (
+          <p className="text-red-600 text-center font-bold text-lg">
+            The roll number is invalid
+          </p>
         )}
       </div>
 
