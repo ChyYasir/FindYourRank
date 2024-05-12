@@ -5,7 +5,7 @@ export default function Home() {
   const [inputRoll, setInputRoll] = useState("");
   const [rank, setRank] = useState(null);
   const [showAdvice, setShowAdvice] = useState(false);
-  const [submitClicked, setSubmitClicked] = useState(false); // State to track if the submit button has been clicked
+  const [submitClicked, setSubmitClicked] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,26 +33,24 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-blue-100">
-      {/* Mobile disclaimer section */}
+    <div className="flex flex-col items-center justify-center min-h-screen bg-blue-100 text-black">
       <div className="md:hidden w-full p-4 bg-yellow-200 border border-blue-600 mt-8">
         <p className="font-bold text-lg">Disclaimer</p>
         <p className="font-bold">
-          Currenlty, This ranking is only for Chattogram board. If you are from
+          Currently, This ranking is only for Chattogram board. If you are from
           any other board and want to know your rank, please contact me on
           Facebook. My Facebook ID is:{" "}
           <a
             href="https://www.facebook.com/profile.php?id=100042767077083"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline"
+            className="underline text-blue-500"
           >
             Yasir Rahman
           </a>
         </p>
       </div>
 
-      {/* Advice button for mobile */}
       <div className="md:hidden w-full p-4 bg-yellow-200 border border-blue-600 mt-8 text-center">
         <button
           className="text-lg font-bold underline mb-2"
@@ -62,7 +60,6 @@ export default function Home() {
         </button>
       </div>
 
-      {/* Advice banner for mobile */}
       {showAdvice && (
         <div className="md:hidden w-full p-4 bg-yellow-200 border border-blue-600 mt-2">
           <p className="font-bold">
@@ -82,7 +79,6 @@ export default function Home() {
         </div>
       )}
 
-      {/* Main content */}
       <div className="w-full max-w-md">
         <h1 className="text-3xl text-center font-bold mt-6 mb-8">
           Find Your Rank (SSC)
@@ -104,7 +100,6 @@ export default function Home() {
             Submit
           </button>
         </form>
-        {/* Render Rank or Roll number not found only after submit button clicked */}
         {submitClicked && (
           <>
             {rank !== null && (
@@ -121,7 +116,6 @@ export default function Home() {
         )}
       </div>
 
-      {/* Desktop disclaimer section */}
       <div className="absolute top-0 right-0 w-full md:w-1/3 p-4 bg-yellow-200 border border-blue-600 mt-8 hidden md:block">
         <p className="font-bold text-lg mb-2">Disclaimer</p>
         <p className="font-bold text-sm">
@@ -132,14 +126,13 @@ export default function Home() {
             href="https://www.facebook.com/profile.php?id=100042767077083"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline"
+            className="underline text-blue-500"
           >
             Yasir Rahman
           </a>
         </p>
       </div>
 
-      {/* Desktop advice section */}
       <div className="absolute top-1/3 right-0 w-full md:w-1/3 p-4 bg-yellow-200 border border-blue-600 mt-8 hidden md:block">
         <p className="font-bold text-lg mb-2">Advice</p>
         <p className="font-bold text-sm">
@@ -151,7 +144,6 @@ export default function Home() {
         </p>
       </div>
 
-      {/* Footer Note section */}
       <div className="w-full max-w-md p-4 bg-yellow-200 mt-6 border border-blue-600 text-center">
         <p className="font-bold flex items-center justify-center">
           <span className="mr-2">⚠️</span> The ranking might not be accurate!
