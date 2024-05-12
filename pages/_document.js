@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from "next/document";
 import { Analytics } from "@vercel/analytics/react";
+// import App from "./_app.js";
 
 export default function Document() {
   return (
@@ -25,6 +26,7 @@ export default function Document() {
 
       <body>
         <Main />
+        {/* <App /> */}
         <Analytics />
         <NextScript />
       </body>

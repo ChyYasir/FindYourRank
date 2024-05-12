@@ -6,12 +6,27 @@ export default function Home() {
   const [rank, setRank] = useState(null);
   const [showAdvice, setShowAdvice] = useState(false);
   const [submitClicked, setSubmitClicked] = useState(false);
+  const [selectedGroup, setSelectedGroup] = useState("Science");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitClicked(true);
+    let fileName = "";
 
-    const response = await fetch("/ranked_file.csv");
+    switch (selectedGroup) {
+      case "Science":
+        fileName = "ranked_file.csv";
+        break;
+      case "Commerce":
+        fileName = "ranked_file_com.csv";
+        break;
+      case "Humanities":
+        fileName = "ranked_file_hum.csv";
+        break;
+      default:
+        fileName = "ranked_file.csv";
+    }
+    const response = await fetch(`/${fileName}`);
     const csv = await response.text();
 
     const { data } = Papa.parse(csv, { header: true });
@@ -84,6 +99,19 @@ export default function Home() {
           Find Your Rank (SSC)
         </h1>
         <form onSubmit={handleSubmit} className="mb-8">
+          {/* Dropdown input for selecting group */}
+          <label className="block mb-4">
+            Select Group:
+            <select
+              value={selectedGroup}
+              onChange={(e) => setSelectedGroup(e.target.value)}
+              className="block w-full p-2 border-2 border-blue-500 rounded focus:outline-none focus:border-blue-600"
+            >
+              <option value="Science">Science</option>
+              {/* <option value="Commerce">Commerce</option> */}
+              <option value="Humanities">Humanities</option>
+            </select>
+          </label>
           <label className="block mb-4">
             Enter Roll Number:
             <input
