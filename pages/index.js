@@ -48,7 +48,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-blue-100 text-black">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-blue-100 text-black container mx-auto px-4 md:px-0">
       <div className="md:hidden w-full p-4 bg-yellow-200 border border-blue-600 mt-8">
         <p className="font-bold text-lg">Disclaimer</p>
         <p className="font-bold">
