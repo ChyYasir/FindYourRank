@@ -18,7 +18,7 @@ export default function Home() {
       case "Science":
         fileName = "ranked_file.csv";
         break;
-      case "Commerce":
+      case "Business Studies":
         fileName = "ranked_file_com.csv";
         break;
       case "Humanities":
@@ -50,7 +50,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-blue-100 text-black container mx-auto px-4 md:px-0">
-      <div className="md:hidden w-full p-4 bg-yellow-200 border border-blue-600 mt-8">
+      <div className="md:hidden w-full p-4 bg-yellow-200 border border-blue-600 mt-8 rounded-lg">
         <p className="font-bold text-lg">Disclaimer</p>
         <p className="font-bold">
           Currently, This ranking is only for Chattogram board. If you are from
@@ -67,7 +67,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="md:hidden w-full p-4 bg-yellow-200 border border-blue-600 mt-8 text-center">
+      <div className="md:hidden w-full p-4 bg-yellow-200 border border-blue-600 mt-8 rounded-lg text-center">
         <button
           className="text-lg font-bold underline mb-2"
           onClick={toggleAdvice}
@@ -77,7 +77,7 @@ export default function Home() {
       </div>
 
       {showAdvice && (
-        <div className="md:hidden w-full p-4 bg-yellow-200 border border-blue-600 mt-2">
+        <div className="md:hidden w-full p-4 bg-yellow-200 border border-blue-600 mt-2 rounded-lg">
           <p className="font-bold">
             Hey Brother/Sister, if Your rank is not what you wish, this is not
             the end. You can still work on yourself. Life is a Marathon and
@@ -100,7 +100,6 @@ export default function Home() {
           Find Your Rank (SSC)
         </h1>
         <form onSubmit={handleSubmit} className="mb-8">
-          {/* Dropdown input for selecting group */}
           <label className="block mb-4">
             Select Group:
             <select
@@ -109,7 +108,7 @@ export default function Home() {
               className="block w-full p-2 border-2 border-blue-500 rounded focus:outline-none focus:border-blue-600"
             >
               <option value="Science">Science</option>
-              {/* <option value="Commerce">Commerce</option> */}
+              <option value="Business Studies">Business Studies</option>
               <option value="Humanities">Humanities</option>
             </select>
           </label>
@@ -126,7 +125,7 @@ export default function Home() {
             type="submit"
             className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
           >
-            Submit
+            {submitClicked ? "Checking..." : "Submit"}
           </button>
         </form>
         {submitClicked && rank === null && (
@@ -144,7 +143,7 @@ export default function Home() {
         )}
       </div>
 
-      <div className="absolute top-0 right-0 w-full md:w-1/3 p-4 bg-yellow-200 border border-blue-600 mt-8 hidden md:block">
+      <div className="absolute top-0 right-0 w-full md:w-1/3 p-4 bg-yellow-200 border border-blue-600 mt-8 rounded-lg hidden md:block">
         <p className="font-bold text-lg mb-2">Disclaimer</p>
         <p className="font-bold text-sm">
           Currently, this ranking is only for the Chattogram board. If you are
@@ -161,7 +160,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="absolute top-1/3 right-0 w-full md:w-1/3 p-4 bg-yellow-200 border border-blue-600 mt-8 hidden md:block">
+      <div className="absolute top-1/3 right-0 w-full md:w-1/3 p-4 bg-yellow-200 border border-blue-600 mt-8 rounded-lg hidden md:block">
         <p className="font-bold text-lg mb-2">Advice</p>
         <p className="font-bold text-sm">
           Hey Brother/Sister, if Your rank is not what you wish, this is not the
@@ -172,7 +171,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="w-full max-w-md p-4 bg-yellow-200 mt-6 border border-blue-600 text-center">
+      <div className="w-full max-w-md p-4 bg-yellow-200 mt-6 border border-blue-600 text-center rounded-lg">
         <p className="font-bold flex items-center justify-center">
           <span className="mr-2">⚠️</span> The ranking might not be accurate!
           But it is close to accurate. You can get an overview of your RANK
