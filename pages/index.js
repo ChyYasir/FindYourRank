@@ -96,9 +96,21 @@ export default function Home() {
       )}
 
       <div className="w-full max-w-md">
-        <h1 className="text-3xl text-center font-bold mt-6 mb-8">
+        <h1 className="text-3xl text-center font-bold mt-6 mb-4">
           Find Your Rank (SSC)
         </h1>
+        <p className="text-center text-sm mb-6 ">
+          If you find this useful, please visit my company{" "}
+          <a
+            href="https://www.breakbyte.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline text-blue-500 font-bold"
+          >
+            BreakByte
+          </a>
+          .
+        </p>
         <form onSubmit={handleSubmit} className="mb-8">
           <label className="block mb-4">
             Select Group:
