@@ -125,7 +125,7 @@ export default function Home() {
             type="submit"
             className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
           >
-            {submitClicked ? "Checking..." : "Submit"}
+            Submit
           </button>
         </form>
         {submitClicked && rank === null && (
